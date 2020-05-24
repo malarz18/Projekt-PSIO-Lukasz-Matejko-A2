@@ -20,7 +20,7 @@ public:
 	float top();
 	float bottom();
 
-	void update(const RectangleShape prostokat);
+	void update();
 private:
 	
 	

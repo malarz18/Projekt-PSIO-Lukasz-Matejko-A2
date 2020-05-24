@@ -1,8 +1,10 @@
 #include "ball.h"
 #include "rectangle.h"
+#include <iostream>
 
 
 using namespace sf;
+using namespace std;
 
 ball::ball(float t_x, float t_y)
 {
@@ -12,7 +14,7 @@ ball::ball(float t_x, float t_y)
 	shape.setOrigin(this->ballRadius, this->ballRadius);
 }
 
-void ball::update(const RectangleShape prostokat)
+void ball::update()
 {
 	shape.move(this->velocity);
 	if (this->left() < 0) {
@@ -28,24 +30,8 @@ void ball::update(const RectangleShape prostokat)
 	else if (this->bottom() > 600) {
 		velocity.y = -ballVelocity;
 	}
-
-	if (this->left() >= prostokat.getPosition().x+100)
-	{
-		velocity.x = -ballVelocity;
-	}
-
-	if (this->right() >= prostokat.getPosition().x)
-	{
-		velocity.x = -ballVelocity;
-	}
-	if (this->top() >= prostokat.getPosition().x)
-	{
-		velocity.y = -ballVelocity;
-	}
-	if (this->bottom() >= prostokat.getPosition().x)
-	{
-		velocity.y = -ballVelocity;
-	}
+	
+	
 
 	
 }
@@ -74,3 +60,5 @@ void ball::draw(RenderTarget& target, RenderStates state) const
 {
 	target.draw(this-> shape, state);
 }
+
+

@@ -10,7 +10,6 @@ class rectangle : public RectangleShape
 	~rectangle() = default;
 	void poruszanie();
 	RectangleShape prostokat;
-
 private:
 	
 	void draw(RenderTarget& target, RenderStates state) const override;//nadpisanie metody draw z klasy Drawable
