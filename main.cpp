@@ -39,10 +39,14 @@ public:
 	float bottom_bound=0;
 	bounds_prostokat(rectangle prostokat)
 	{
-		left_bound = prostokat.prostokat.getGlobalBounds().top;
+		/*left_bound = prostokat.prostokat.getGlobalBounds().top;
 		right_bound = prostokat.prostokat.getGlobalBounds().top + prostokat.prostokat.getGlobalBounds().width;
 		top_bound = prostokat.prostokat.getGlobalBounds().top;
-		bottom_bound = prostokat.prostokat.getGlobalBounds().top + prostokat.prostokat.getGlobalBounds().height;
+		bottom_bound = prostokat.prostokat.getGlobalBounds().top + prostokat.prostokat.getGlobalBounds().height;*/
+		left_bound = prostokat.prostokat.getPosition().x;
+		right_bound = prostokat.prostokat.getPosition().x + 100;
+		top_bound = prostokat.prostokat.getPosition().y;
+		bottom_bound = prostokat.prostokat.getPosition().y + 50;
 	};
 	~bounds_prostokat()=default;
 
